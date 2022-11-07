@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Navbar, MobileNav, Typography, Button, IconButton } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/UserContext";
 
 export default function Nav() {
     const [openNav, setOpenNav] = useState(false);
+    const {name} = useContext(AuthContext);
 
     useEffect(() => {
         window.addEventListener(
@@ -27,7 +29,7 @@ export default function Nav() {
                     <Link to="/">SHIFT-LAWYER</Link>
                 </Typography>
                 <div className="hidden lg:block">{navList}</div>
-                <Button variant="gradient" size="sm" className="hidden lg:inline-block"><span>Buy Now</span></Button>
+                <Button variant="gradient" size="sm" className="hidden lg:inline-block"><span>Get started</span></Button>
                 <IconButton variant="text" className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden" ripple={false} onClick={() => setOpenNav(!openNav)} >
                     {openNav ? (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} >
@@ -42,7 +44,7 @@ export default function Nav() {
             <MobileNav open={openNav}>
                 {navList}
                 <Button variant="gradient" size="sm" fullWidth className="mb-2">
-                    <span>Buy Now</span>
+                    <span>Get Started</span>
                 </Button>
             </MobileNav>
         </Navbar>
