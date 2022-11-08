@@ -15,6 +15,7 @@ const Signup = () => {
         const password = form.password.value;
         signUpWithEmail(email, password)
         .then((userCredential) => {
+            console.log(userCredential);
             form.reset();
             alert('user created successfully')
           })
@@ -33,7 +34,7 @@ const Signup = () => {
                 <div className="my-3"><Input variant="outlined" type="text" name="imgUrl" label="Image url" /></div>
                 <div className="my-3"><Input variant="outlined" type="email" name="email" label="email" /></div>
                 <div className="my-3"><Input variant="outlined" type="password" name="password" label="password" /></div>
-                <Button className="w-full my-3" type="submit">Button</Button>
+                <Button className="w-full my-3" type="submit">Sign up</Button>
             </form>
         </div>
     );
