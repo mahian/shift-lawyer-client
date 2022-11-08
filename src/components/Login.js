@@ -25,8 +25,8 @@ const Login = () => {
         <div className="container mx-auto py-20">
             <form onSubmit={handleSubmit} className="w-96 mx-auto items-end gap-4">
                 <div>
-                    <h2 className="text-3xl font-bold">Sign up</h2>
-                    <p className="my-5">allready have an account? please <Link to="login">Login</Link></p>
+                    <h2 className="text-3xl font-bold">Login</h2>
+                    <p className="my-5">not have an account yet? please <Link to="../signup">register</Link></p>
                 </div>
                 <div className="my-3"><Input variant="outlined" type="email" name="email" label="email" /></div>
                 <div className="my-3"><Input variant="outlined" type="password" name="password" label="password" /></div>

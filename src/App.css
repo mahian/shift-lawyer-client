@@ -1,3 +1,23 @@
 .hero-content{
     background: linear-gradient(to right, #000000 , #00000000);
 }
+
+/* dashboard navbar css =======================*/
+#sidebar {
+    --tw-translate-x: -100%;
+}
+#menu-close-icon {
+    display: none;
+}
+#menu-open:checked ~ #sidebar {
+    --tw-translate-x: 0;
+}
+#menu-open:checked ~ * #mobile-menu-button {
+    background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+@media (min-width: 768px) {
+    #sidebar {
+        --tw-translate-x: 0;
+    }
+}
+/* dashboard navbar css ==========================*/
