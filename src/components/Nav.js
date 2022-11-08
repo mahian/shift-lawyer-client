@@ -43,9 +43,9 @@ export default function Nav() {
             </div>
             <MobileNav open={openNav}>
                 {navList}
-                <Button variant="gradient" size="sm" fullWidth className="mb-2">
-                    <span>Get Started</span>
-                </Button>
+                <div>
+                    <Link to="signup"><Button variant="gradient" size="sm" fullWidth className="mb-2">sign up</Button></Link>
+                </div>
             </MobileNav>
         </Navbar>
     );
