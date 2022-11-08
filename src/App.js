@@ -7,6 +7,8 @@ import ServiceDetails from './components/ServiceDetails';
 import Signup from './components/Signup';
 import Main from './layout/Main';
 import PrivetRoute from './privet-route/PrivetRoute';
+import AddService from './components/AddService';
+import Manage from './components/Manage';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +25,10 @@ function App() {
     {
       path: 'dashboard',
       element: <PrivetRoute><Dashboard/></PrivetRoute>,
+      children: [
+        {path: 'add-service', element: <PrivetRoute><AddService/></PrivetRoute>},
+        {path: 'manage-service', element: <PrivetRoute><Manage/></PrivetRoute>},
+      ]
     }
   ])
   return (

@@ -2,6 +2,7 @@ import { Button, Input } from "@material-tailwind/react";
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/UserContext";
+import AuthProviders from "./AuthProviders";
 
 const Signup = () => {
     const { signUpWithEmail } = useContext(AuthContext)
@@ -35,6 +36,12 @@ const Signup = () => {
                 <div className="my-3"><Input variant="outlined" type="email" name="email" label="email" /></div>
                 <div className="my-3"><Input variant="outlined" type="password" name="password" label="password" /></div>
                 <Button className="w-full my-3" type="submit">Sign up</Button>
+                <div className="flex items-center my-3">
+                    <div className="bg-gray-200 w-full h-[1px]"></div>
+                    <p className="mx-3 whitespace-nowrap text-gray-400">or sign up with</p>
+                    <div className="bg-gray-200 w-full h-[1px]"></div>
+                </div>
+                <AuthProviders/>
             </form>
         </div>
     );
