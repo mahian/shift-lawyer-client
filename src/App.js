@@ -31,6 +31,7 @@ function App() {
         { path: 'add-service', element: <PrivetRoute><AddService /></PrivetRoute> },
         {
           path: 'manage-service',
+          loader: () => fetch('https://shift-lawyer-server.vercel.app/services'),
           element: <PrivetRoute><Manage /></PrivetRoute>
         },
       ]
