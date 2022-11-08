@@ -29,7 +29,7 @@ export default function Nav() {
                     <Link to="/">SHIFT-LAWYER</Link>
                 </Typography>
                 <div className="hidden lg:block">{navList}</div>
-                <Button variant="gradient" size="sm" className="hidden lg:inline-block"><span>Get started</span></Button>
+                <Link to="signup"><Button variant="gradient" size="sm" className="hidden lg:inline-block"><span>Get started</span></Button></Link>
                 <IconButton variant="text" className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden" ripple={false} onClick={() => setOpenNav(!openNav)} >
                     {openNav ? (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} >

@@ -1,13 +1,26 @@
 import { Button, Input } from "@material-tailwind/react";
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/UserContext";
 
 const Signup = () => {
+    const {signUpWithEmail} = useContext(AuthContext)
+
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        console.log(name);
+        const imgUrl = form.imgUrl.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        signUpWithEmail(email, password)
+        .then((userCredential) => {
+            form.reset();
+            alert('user created successfully')
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
     }
     return (
         <div className="container mx-auto py-20">
