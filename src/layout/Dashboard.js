@@ -53,6 +53,9 @@ const Dashboard = () => {
                         <Link to="" class="block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
                             terms and conditions
                         </Link>
+                        <Link to="/" class="block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
+                            back to Home Page
+                        </Link>
                     </nav>
                 </aside>
 

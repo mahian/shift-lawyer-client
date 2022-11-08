@@ -29,7 +29,7 @@ const Signup = () => {
             <form onSubmit={handleSubmit} className="w-96 mx-auto items-end gap-4">
                 <div>
                     <h2 className="text-3xl font-bold">Sign up</h2>
-                    <p className="my-5">allready have an account? please <Link to="../login">Login</Link></p>
+                    <p className="my-5">allready have an account? please <Link className='text-light-blue-500' to="../login">Login</Link></p>
                 </div>
                 <div className="my-3"><Input variant="outlined" type="text" name="name" label="name" /></div>
                 <div className="my-3"><Input variant="outlined" type="text" name="imgUrl" label="Image url" /></div>

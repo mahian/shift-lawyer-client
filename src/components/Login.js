@@ -27,7 +27,7 @@ const Login = () => {
             <form onSubmit={handleSubmit} className="w-96 mx-auto items-end gap-4">
                 <div>
                     <h2 className="text-3xl font-bold">Login</h2>
-                    <p className="my-5">not have an account yet? please <Link to="../signup">register</Link></p>
+                    <p className="my-5">not have an account yet? please <Link className='text-light-blue-500' to="../signup">register</Link></p>
                 </div>
                 <div className="my-3"><Input variant="outlined" type="email" name="email" label="email" /></div>
                 <div className="my-3"><Input variant="outlined" type="password" name="password" label="password" /></div>
