@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const ServiceDetails = () => {
+    const service = useLoaderData()
+    console.log(service);
     return (
         <section className='container mx-auto my-20'>
             <div className='grid md:grid-cols-2 gap-10'>
