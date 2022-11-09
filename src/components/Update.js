@@ -1,11 +1,10 @@
 import { Button, Input, Textarea } from '@material-tailwind/react';
 import React from 'react';
-import { AiFillPlusCircle } from 'react-icons/ai';
+import { AiOutlineEdit } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
 
 const Update = () => {
     const service = useLoaderData();
-    console.log(service);
     const handleUpdateServices = event => {
         event.preventDefault();
         const form = event.target;
@@ -13,19 +12,20 @@ const Update = () => {
         const imgUrl = form.imgUrl.value;
         const description = form.description.value;
         const service = { title, imgUrl, description };
-        fetch('https://shift-lawyer-server.vercel.app/add-service', {
+        fetch(`https://shift-lawyer-server.vercel.app/services/${service._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(service)
-        }).then(res => res.json())
+        })
+            .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('service added successfully');
-                    form.reset();
+                    alert('service updated successfully');
                 }
             })
+
     }
     return (
         <div>
@@ -35,10 +35,10 @@ const Update = () => {
                 </div>
                 <div className='grid grid-cols-2 gap-5'>
                     <div className="my-3"><Input variant="outlined" defaultValue={service.title} type="text" name="title" label="title" /></div>
-                    <div className="my-3"><Input variant="outlined" type="text" name="imgUrl" label="Image url" /></div>
+                    <div className="my-3"><Input variant="outlined" defaultValue={service.imgUrl} type="text" name="imgUrl" label="Image url" /></div>
                 </div>
-                <div className="my-3"><Textarea variant="outlined" type="text" name="description" label="Description" /></div>
-                <Button className="w-full my-3 flex items-center justify-center" type="submit">Add <AiFillPlusCircle className='text-2xl ml-2' /></Button>
+                <div className="my-3"><Textarea variant="outlined" defaultValue={service.description} type="text" name="description" label="Description" /></div>
+                <Button className="w-full my-3 flex items-center justify-center" type="submit">Update <AiOutlineEdit className='text-2xl ml-2' /></Button>
             </form>
         </div>
     );

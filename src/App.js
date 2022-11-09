@@ -10,6 +10,8 @@ import PrivetRoute from './privet-route/PrivetRoute';
 import AddService from './components/AddService';
 import Manage from './components/Manage';
 import Update from './components/Update';
+import Services from './components/Services';
+import Blog from './components/Blog';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +20,8 @@ function App() {
       element: <Main />,
       children: [
         { path: '/', element: <Home /> },
+        { path: 'services', element: <Services /> },
+        { path: 'blog', element: <Blog /> },
         { path: 'service-details/:id',
         loader:({params})=> fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`) ,
         element: <ServiceDetails /> },

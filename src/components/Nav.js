@@ -32,6 +32,12 @@ export default function Nav() {
                 <Link to="/" className="flex items-center">Home</Link>
             </Typography>
             <Typography as="li" variant="small" color="blue-gray" className="p-1 font-semibold" >
+                <Link to="services" className="flex items-center">Services</Link>
+            </Typography>
+            <Typography as="li" variant="small" color="blue-gray" className="p-1 font-semibold" >
+                <Link to="blog" className="flex items-center">Blog</Link>
+            </Typography>
+            <Typography as="li" variant="small" color="blue-gray" className="p-1 font-semibold" >
                 <Link to="dashboard" className="flex items-center">Dashboard</Link>
             </Typography>
         </ul>
