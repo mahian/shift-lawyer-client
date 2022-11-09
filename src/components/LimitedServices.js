@@ -13,7 +13,6 @@ const LimitedServices = () => {
                 console.log("error", error);
             }
         };
-
         fetchData();
     }, [])
     return (

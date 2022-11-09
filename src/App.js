@@ -12,6 +12,8 @@ import Manage from './components/Manage';
 import Update from './components/Update';
 import Services from './components/Services';
 import Blog from './components/Blog';
+import DashboardHome from './components/DashboardHome';
+import Error from './components/Error';
 
 function App() {
   const router = createBrowserRouter([
@@ -22,17 +24,21 @@ function App() {
         { path: '/', element: <Home /> },
         { path: 'services', element: <Services /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'service-details/:id',
-        loader:({params})=> fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`) ,
-        element: <ServiceDetails /> },
+        {
+          path: 'service-details/:id',
+          loader: ({ params }) => fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`),
+          element: <ServiceDetails />
+        },
         { path: 'signup', element: <Signup /> },
         { path: 'login', element: <Login /> },
+        { path: '*', element: <Error /> },
       ]
     },
     {
       path: 'dashboard',
       element: <PrivetRoute><Dashboard /></PrivetRoute>,
       children: [
+        { index: 1, element: <DashboardHome /> },
         { path: 'add-service', element: <PrivetRoute><AddService /></PrivetRoute> },
         {
           path: 'manage-service',
@@ -41,9 +47,10 @@ function App() {
         },
         {
           path: 'update-service/:id',
-          loader: ({params})=> fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`),
+          loader: ({ params }) => fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`),
           element: <PrivetRoute><Update /></PrivetRoute>
         },
+        { path: '*', element: <Error /> },
       ]
     }
   ])
