@@ -32,27 +32,15 @@ const ServiceDetails = () => {
                         <Button className="my-3 flex items-center justify-center" type="submit">Send</Button>
                     </form>
                     <h2 className='text-2xl font-bold mb-5'>All reviews</h2>
-                    <div className='border-2 border-light-blue-200 p-5 rounded-md my-3'>
+                    
+                    <div className='border-2 bg-gray-50 p-5 rounded-md my-3'>
                         <div className='flex items-center'>
                             <img className='h-10 w-10 object-cover rounded-full' src="https://images.mubicdn.net/images/cast_member/485176/cache-365014-1606165048/image-w856.jpg?size=800x" alt="" />
                             <span className='whitespace-nowrap font-semibold text-gray-500 ml-3'>Ariana Grande</span>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio voluptatem repellendus explicabo cupiditate impedit voluptatibus, nostrum accusamus libero nobis aperiam error sequi.</p>
                     </div>
-                    <div className='border-2 border-light-blue-200 p-5 rounded-md my-3'>
-                        <div className='flex items-center'>
-                            <img className='h-10 w-10 object-cover rounded-full' src="https://images.mubicdn.net/images/cast_member/485176/cache-365014-1606165048/image-w856.jpg?size=800x" alt="" />
-                            <span className='whitespace-nowrap font-semibold text-gray-500 ml-3'>Ariana Grande</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio voluptatem repellendus explicabo cupiditate impedit voluptatibus, nostrum accusamus libero nobis aperiam error sequi.</p>
-                    </div>
-                    <div className='border-2 border-light-blue-200 p-5 rounded-md my-3'>
-                        <div className='flex items-center'>
-                            <img className='h-10 w-10 object-cover rounded-full' src="https://images.mubicdn.net/images/cast_member/485176/cache-365014-1606165048/image-w856.jpg?size=800x" alt="" />
-                            <span className='whitespace-nowrap font-semibold text-gray-500 ml-3'>Ariana Grande</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio voluptatem repellendus explicabo cupiditate impedit voluptatibus, nostrum accusamus libero nobis aperiam error sequi.</p>
-                    </div>
+
                 </div>
             </div>
         </section>

@@ -5,19 +5,20 @@ import { useLoaderData } from 'react-router-dom';
 
 const Update = () => {
     const service = useLoaderData();
+    console.log(service);
     const handleUpdateServices = event => {
         event.preventDefault();
         const form = event.target;
         const title = form.title.value;
         const imgUrl = form.imgUrl.value;
         const description = form.description.value;
-        const service = { title, imgUrl, description };
+        const UpdatedService = { title, imgUrl, description };
         fetch(`https://shift-lawyer-server.vercel.app/services/${service._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(service)
+            body: JSON.stringify(UpdatedService)
         })
             .then(res => res.json())
             .then(data => {

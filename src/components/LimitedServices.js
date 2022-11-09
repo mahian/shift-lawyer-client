@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import SectionTitle from './SectionTitle';
 import ServiceItem from './ServiceItem';
 
-const Services = () => {
+const LimitedServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://shift-lawyer-server.vercel.app/services');
+                const response = await fetch('https://shift-lawyer-server.vercel.app/limitedServices');
                 const json = await response.json();
                 setServices(json);
             } catch (error) {
@@ -18,15 +17,14 @@ const Services = () => {
         fetchData();
     }, [])
     return (
-        <section className='my-20 container mx-auto'>
-            <SectionTitle title="Our services" />
-            <div className='grid md:grid-cols-3 gap-10'>
+        <section>
+            <div className='container mx-auto grid md:grid-cols-3 gap-10 py-20'>
                 {
-                    services.map(service => <ServiceItem key={service._id} service={service}/>)
+                    services.map(service => <ServiceItem key={service._id} service={service} />)
                 }
             </div>
         </section>
     );
 };
 
-export default Services;
+export default LimitedServices;
