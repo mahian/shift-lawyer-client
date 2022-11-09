@@ -57,6 +57,7 @@ export default function Nav() {
                             <Link to="signup"><Button variant="gradient" size="sm" className="hidden lg:inline-block"><span>Sign Up</span></Button></Link>
                         </div> :
                         <div>
+                            <Link to="dashboard/add-service"><Button variant="gradient" size="sm" className="hidden lg:inline-block lg:mr-4">Add-service</Button></Link>
                             <Button onClick={handleSignedOut} variant="gradient" size="sm" className="hidden lg:inline-block">Log out</Button>
                         </div>
                 }
@@ -74,9 +75,20 @@ export default function Nav() {
             </div>
             <MobileNav open={openNav}>
                 {navList}
-                <div>
+                {
+                    !user ?
+                        <div>
+                            <Link to="login" className="font-semibold mr-3">Log in</Link>
+                            <Link to="signup"><Button variant="gradient" size="sm" className="mb-2"><span>Sign Up</span></Button></Link>
+                        </div> :
+                        <div>
+                            <Link to="dashboard/add-service"><Button variant="gradient" size="sm" className="mb-2 mr-4">Add-service</Button></Link>
+                            <Button onClick={handleSignedOut} variant="gradient" size="sm" className="mb-2">Log out</Button>
+                        </div>
+                }
+                {/* <div>
                     <Link to="signup"><Button variant="gradient" size="sm" fullWidth className="mb-2">sign up</Button></Link>
-                </div>
+                </div> */}
             </MobileNav>
         </Navbar>
     );

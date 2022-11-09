@@ -14,6 +14,7 @@ import Services from './components/Services';
 import Blog from './components/Blog';
 import DashboardHome from './components/DashboardHome';
 import Error from './components/Error';
+import 'react-photo-view/dist/react-photo-view.css';
 
 function App() {
   const router = createBrowserRouter([
