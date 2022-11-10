@@ -12,7 +12,7 @@ const ServiceItem = ({ service }) => {
                 </PhotoView>
                 <h2 className='text-3xl font-bold mt-3'>{service.title}</h2>
                 <p className='mt-5 text-gray-500'>{service.description.slice(0, 100)}...</p>
-                <Link to={`service-details/${service._id}`}><Button className='mt-5 w-full' variant="gradient">Learn More</Button></Link>
+                <Link to={`../service-details/${service._id}`}><Button className='mt-5 w-full' variant="gradient">Learn More</Button></Link>
             </div>
         </PhotoProvider>
     );

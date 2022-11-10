@@ -15,6 +15,7 @@ import Blog from './components/Blog';
 import DashboardHome from './components/DashboardHome';
 import Error from './components/Error';
 import 'react-photo-view/dist/react-photo-view.css';
+import MyReviews from './components/MyReviews';
 
 function App() {
   const router = createBrowserRouter([
@@ -25,6 +26,7 @@ function App() {
         { path: '/', element: <Home /> },
         { path: 'services', element: <Services /> },
         { path: 'blog', element: <Blog /> },
+        { path: 'my-reviews', element: <PrivetRoute><MyReviews /></PrivetRoute> },
         {
           path: 'service-details/:id',
           loader: ({ params }) => fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`),
