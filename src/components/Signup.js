@@ -23,12 +23,14 @@ const Signup = () => {
         signUpWithEmail(email, password)
             .then((userCredential) => {
                 console.log(userCredential);
+                form.reset();
+                alert('user created successfully')
+
+                //  update user
                 updateProfile(auth.currentUser, {
                     displayName: name, 
                     photoURL: imgUrl,
                 })
-                form.reset();
-                alert('user created successfully')
             })
             .catch((error) => {
                 console.log(error.message);

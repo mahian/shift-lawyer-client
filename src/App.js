@@ -26,7 +26,11 @@ function App() {
         { path: '/', element: <Home /> },
         { path: 'services', element: <Services /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'my-reviews', element: <PrivetRoute><MyReviews /></PrivetRoute> },
+        {
+          path: 'my-reviews',
+          loader: () => fetch('https://shift-lawyer-server.vercel.app/reviews'),
+          element: <PrivetRoute><MyReviews /></PrivetRoute>
+        },
         {
           path: 'service-details/:id',
           loader: ({ params }) => fetch(`https://shift-lawyer-server.vercel.app/services/${params.id}`),

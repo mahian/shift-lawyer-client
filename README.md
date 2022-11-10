@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Bulet Point
+features: 
+1/ 1 dash board
+2/ manage services
+3/ services delete and update
+4/ users can review of any services
+5/ the review is delatable 
+6/ all the services is daynamic
+
 ## Available Scripts
 
 In the project directory, you can run:
