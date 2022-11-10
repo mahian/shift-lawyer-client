@@ -2,8 +2,10 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { MdManageAccounts } from 'react-icons/md';
+import useTitle from '../hooks/useTitle';
 
 const Dashboard = () => {
+    useTitle('dashboard');
     return (
         <div>
             <div className="relative min-h-screen md:flex" data-dev-hint="container">

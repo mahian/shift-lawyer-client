@@ -1,5 +1,6 @@
 import { Button } from '@material-tailwind/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -9,7 +10,7 @@ const Banner = () => {
                 <h5 className='text-2xl font-bold text-gray-500'>with lawyer & attorney</h5>
                 <h1 className='text-5xl md:text-8xl font-bold'>every client <br /> matters.</h1>
                 <div className='mt-10'>
-                <Button className='text-white' variant="outlined">Learn more about me</Button>
+                <Link><Button className='text-white' variant="outlined">Learn more about me</Button></Link>
                 </div>
             </div>
         </div>

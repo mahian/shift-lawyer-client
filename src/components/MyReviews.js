@@ -1,8 +1,10 @@
 import React from 'react';
 import { MdDelete, MdModeEditOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const MyReviews = () => {
+    useTitle('my-reviews');
     return (
         <section className='my-20'>
             <div className='container mx-auto'>

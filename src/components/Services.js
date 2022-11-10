@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../hooks/useTitle';
 import SectionTitle from './SectionTitle';
 import ServiceItem from './ServiceItem';
 
 const Services = () => {
+    useTitle('services')
     const [services, setServices] = useState([]);
     useEffect(() => {
         const fetchData = async () => {

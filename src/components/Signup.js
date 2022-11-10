@@ -1,10 +1,16 @@
 import { Button, Input } from "@material-tailwind/react";
+import { updateProfile, getAuth } from "firebase/auth";
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/UserContext";
+import useTitle from "../hooks/useTitle";
 import AuthProviders from "./AuthProviders";
 
+// firebase auth
+const auth = getAuth();
+
 const Signup = () => {
+    useTitle('sign up')
     const { signUpWithEmail } = useContext(AuthContext)
 
     const handleSubmit = event => {
@@ -17,6 +23,10 @@ const Signup = () => {
         signUpWithEmail(email, password)
             .then((userCredential) => {
                 console.log(userCredential);
+                updateProfile(auth.currentUser, {
+                    displayName: name, 
+                    photoURL: imgUrl,
+                })
                 form.reset();
                 alert('user created successfully')
             })
@@ -41,7 +51,7 @@ const Signup = () => {
                     <p className="mx-3 whitespace-nowrap text-gray-400">or sign up with</p>
                     <div className="bg-gray-200 w-full h-[1px]"></div>
                 </div>
-                <AuthProviders/>
+                <AuthProviders />
             </form>
         </div>
     );
