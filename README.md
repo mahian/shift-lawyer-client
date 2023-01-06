@@ -4,12 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Bulet Point
 features: 
-1/ 1 dash board
-2/ manage services
-3/ services delete and update
-4/ users can review of any services
-5/ the review is delatable 
-6/ all the services is daynamic
+-1/ 1 dash board
+-2/ manage services
+-3/ services delete and update
+-4/ users can review of any services
+-5/ the review is delatable 
+-6/ all the services is daynamic
 
 ## Available Scripts
 
